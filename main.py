@@ -63,3 +63,11 @@ if __name__ == "__main__":
     while True:
         api.process_and_save()
         time.sleep(1) # ১ সেকেন্ড অটো-রিফ্রেশ
+        import os
+
+if __name__ == "__main__":
+    # Render অটোমেটিক একটি পোর্ট দেয়, সেটি খুঁজে বের করা
+    port = int(os.environ.get("PORT", 5000)) 
+    
+    # হোস্ট 0.0.0.0 এবং নির্দিষ্ট পোর্টে রান করা
+    app.run(host='0.0.0.0', port=port)
